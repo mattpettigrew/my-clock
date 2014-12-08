@@ -8,14 +8,20 @@ from sys import stdout
 
 
 root = Tk()
+root.attributes("-topmost", 1)
+root.geometry("-10+0")
+
+
 thetime = time.time()
-taco = datetime.datetime.fromtimestamp(thetime).strftime(" %H:%M:%S   %m-%d-%Y")
+taco = datetime.datetime.fromtimestamp(thetime).strftime(" %H:%M:%S   %m-%d")
 w = Label(root, font=('times', 40, 'bold'), bg='green', text = taco)
+
 w.pack()
 def my_mainloop():
 	
 	thetime = time.time()
-	taco = datetime.datetime.fromtimestamp(thetime).strftime(" %H:%M:%S   %m-%d-%Y")
+	taco = datetime.datetime.fromtimestamp(thetime).strftime(" %I:%M:%S   %m-%d ")
+	
 	#
 	#w["bg"] = 'blue'
 	w['text'] = taco
